@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import askForName from '../src/cli.js';
+import bgGreeting from '../src/greeting.js';
 
-console.log('Welcome to the brain games!');
-askForName();
+bgGreeting();

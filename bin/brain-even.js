@@ -1,8 +1,6 @@
 #!/usr/bin/env node
-import askForName from '../src/cli.js';
-import evenNum from '../src/evennum.js';
-import bgGreeting from '../src/greeting.js';
+/* eslint-disable linebreak-style */
 
-bgGreeting();
+import gameShell from '../src/game-shell.js';
 
-evenNum(askForName());
+gameShell('evennum'); // параметр - имя задачи, которую будет вызывать оболочка

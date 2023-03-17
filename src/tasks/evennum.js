@@ -1,12 +1,14 @@
+/* eslint-disable linebreak-style */
 import readlineSync from 'readline-sync';
 
-const evenNum = (playerName) => {
+const evennum = () => {
   let prevNum = 0;
   let correctAnss = 0;
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   do {
     const newToIdentify = Math.floor(Math.random() * 100); // генерируем случайное целое
+    // eslint-disable-next-line no-continue
     if (newToIdentify === prevNum) continue; // если число повторяется, пропускаем его
 
     prevNum = newToIdentify; // перезаписываем значение "предыдущего"
@@ -24,14 +26,11 @@ const evenNum = (playerName) => {
       console.log('Correct!');
       correctAnss += 1;
     } else {
-      correctAnss = 0;
       console.log(`'${ans}' is wrong answer ;(. Correct answer was '${isEven}'.`);
-      console.log(`Let's try again, ${playerName}!`);
       break;
     }
   } while (correctAnss < 3); // счётчик корректных ответов
-
-  if (correctAnss === 3) console.log(`Congratulations, ${playerName}!`); // поздравительная речь в случае успеха
+  return correctAnss === 3;
 };
 
-export default evenNum;
+export default evennum;

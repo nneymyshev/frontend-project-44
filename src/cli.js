@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import readlineSync from 'readline-sync';
 
 const askForName = () => {
@@ -7,4 +8,3 @@ const askForName = () => {
 };
 
 export default askForName;
-

@@ -17,6 +17,6 @@ const calcGenAndResult = () => {
       calcResult = numOne * numTwo;
       console.log(`Question: ${numOne} * ${numTwo}`);
   }
-  return calcResult;
+  return calcResult; // возвращаем правильный результат для передачи на проверку
 };
 export default calcGenAndResult;

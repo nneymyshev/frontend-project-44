@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 /* eslint-disable linebreak-style */
+import calc from '../src/tasks/calc.js';
 
-import gameShell from '../src/game-shell.js';
-
-gameShell('calc'); // параметр - имя задачи, которую будет вызывать оболочка
+calc();

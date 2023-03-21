@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable linebreak-style */
 
-import gameShell from '../src/game-shell.js';
+import gcd from '../src/tasks/gcd.js';
 
-gameShell('gcd'); // параметр - имя задачи, которую будет вызывать оболочка
+gcd();

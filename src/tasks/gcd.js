@@ -14,7 +14,7 @@ const gcd = () => {
     /* след.строка: генерация и вывод выражения + расчет целевого результата
     не является общей подзадачей, аутсорс сделан сугубо для разгрузки файла */
     const gcdResult = gcdPairGen();
-    if (ansInputAndCheck(playerName, gcdResult, correctAnss)) { correctAnss += 1; } else { break; }
+    if (ansInputAndCheck(playerName, gcdResult)) { correctAnss += 1; } else { break; }
   } while (correctAnss < 3); // счётчик корректных ответов
   afterword(playerName, correctAnss === 3);
 };

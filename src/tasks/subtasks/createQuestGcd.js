@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 const gcdPairGen = () => {
-/* генерируем два числа и вычисляем сам делитель */
+  /* генерируем два числа и вычисляем сам делитель */
   let basis = Math.ceil(Math.random() * 11);
   if (basis === 10) { basis = 9; }
   let numOne;

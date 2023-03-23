@@ -7,6 +7,6 @@ const evenGen = (prevNum) => {
     if (newToIdentify % 2 === 0) { isEven = 'yes'; } // собственно проверка на чётность
     console.log(`Question: ${newToIdentify}`);
   } while (newToIdentify === prevNum);
-  return [isEven, newToIdentify]; // возвращаем корректный ответ и трекинг предыдущего значения
+  return isEven; // возвращаем корректный ответ и трекинг предыдущего значения
 };
 export default evenGen;

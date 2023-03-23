@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 /* eslint-disable linebreak-style */
+import playGame from '../src/index.js';
 
-import progression from '../src/tasks/progression.js';
-
-progression();
+playGame();

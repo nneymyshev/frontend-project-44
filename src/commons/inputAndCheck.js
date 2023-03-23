@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import readlineSync from 'readline-sync';
 
-const ansInputAndCheck = (playerName, correctAns) => {
+const ansInputAndCheck = (correctAns) => {
   const ans = readlineSync.question('Your answer: '); // запрашиваем у пользователя ответ
   if (String(ans) === String(correctAns)) {
     console.log('Correct!');

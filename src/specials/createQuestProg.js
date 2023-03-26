@@ -12,11 +12,12 @@ const progGen = () => {
   /* в цикле формируем строку прогресии */
   for (let pos = 1; pos <= length; pos += 1) {
     if (pos === missingPos) {
-      progString += ' ..';
+      progString += '.. ';
       missElem = element;
-    } else { progString += ` ${element}`; }
+    } else { progString += `${element} `; }
     element += step;
   }
+  progString = progString.trimEnd();
   const questionAndResult = {
     question: progString,
     result: missElem,

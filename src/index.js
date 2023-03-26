@@ -8,6 +8,7 @@ function playGame() {
   console.log('Welcome to the brain games!');
 
   const playerName = readlineSync.question('May I have your name? ') || 'UserName';
+  console.log(`Hello, ${playerName}!`);
 
   let calledFrom = (new Error()).stack.split('\n')[2].trim().split(' ')[1];
   calledFrom = calledFrom.slice(calledFrom.indexOf('/bin/') + 5, calledFrom.indexOf('.js:'));

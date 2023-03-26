@@ -1,12 +1,13 @@
 /* eslint-disable linebreak-style */
-const evenGen = (prevNum) => {
-  let isEven = 'no'; // характеристика по умолчанию
-  let newToIdentify = 0;
-  do { // цикл для отсева повторяющихся чисел.
-    newToIdentify = Math.floor(Math.random() * 100); // генерируем случайное целое
-    if (newToIdentify % 2 === 0) { isEven = 'yes'; } // собственно проверка на чётность
-    console.log(`Question: ${newToIdentify}`);
-  } while (newToIdentify === prevNum);
-  return isEven; // возвращаем корректный ответ и трекинг предыдущего значения
+import genRandomInteger from '../commons/genRandom.js';
+
+const evenGen = () => {
+  const questionAndResult = {
+    question: 0,
+    result: 'no',
+  };
+  questionAndResult.question = genRandomInteger(1, 999); // генерируем случайное целое
+  if (questionAndResult.question % 2 === 0) { questionAndResult.result = 'yes'; } // собственно проверка на чётность
+  return questionAndResult; // возвращаем корректный ответ
 };
 export default evenGen;

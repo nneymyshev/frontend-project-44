@@ -1,23 +1,26 @@
 /* eslint-disable linebreak-style */
+import genRandomInteger from '../commons/genRandom.js';
+
 const progGen = () => {
   /* генерируем отправное число прогрессии, шаг, и длину ряда */
-  let elem = Math.ceil(Math.random() * 10);
-  let step = Math.ceil(Math.random() * 5);
-  let len = Math.ceil(Math.random() * 10);
-  if (len < 5 || len > 10) { len = 7; }
-  const missingPos = len - Math.floor(len * Math.random());
-  if (step <= 1) { step = 3; }
-  let progString = ''; // elem.toString();
+  let element = genRandomInteger(0, 99);
+  const step = genRandomInteger(2, 9);
+  const length = genRandomInteger(5, 10);
+  const missingPos = genRandomInteger(1, length);
+  let progString = '';
   let missElem;
   /* в цикле формируем строку прогресии */
-  for (let pos = 1; pos <= len; pos += 1) {
+  for (let pos = 1; pos <= length; pos += 1) {
     if (pos === missingPos) {
       progString += ' ..';
-      missElem = elem;
-    } else { progString += ` ${elem}`; }
-    elem += step;
+      missElem = element;
+    } else { progString += ` ${element}`; }
+    element += step;
   }
-  console.log(`Question: ${progString}`);
-  return missElem; // возвращаем правильный результат для передачи на проверку
+  const questionAndResult = {
+    question: progString,
+    result: missElem,
+  };
+  return questionAndResult; // возвращаем правильный результат для передачи на проверку
 };
 export default progGen;

@@ -1,16 +1,22 @@
 /* eslint-disable linebreak-style */
+import genRandomInteger from '../commons/genRandom.js';
+
 const primeGen = () => {
-  let num = Math.ceil(Math.random() * 1000);
-  if (num < 9) { num = 9; }
-  console.log(`Question: ${num}`);
-  let isPrime = 'yes';
-  if (num % 2 === 0) { return 'no'; }
-  for (let d = 3; d <= Math.ceil(Math.sqrt(num)); d += 2) {
-    if (num % d === 0) {
-      isPrime = 'no';
-      return isPrime;
+  const num = genRandomInteger(1, 999);
+  let whetherPrime = '';
+  while (whetherPrime === '') {
+    if (num === 2 || num === 3 || num === 5 || num === 7) { whetherPrime = 'yes'; break; }
+    if (num === 1 || num === 4 || num === 5 || num === 8) { whetherPrime = 'no'; break; }
+    if (num % 2 === 0) { whetherPrime = 'no'; break; }
+    for (let d = 3; d <= Math.ceil(Math.sqrt(num)); d += 2) {
+      if (num % d === 0) { whetherPrime = 'no'; break; }
     }
+    if (whetherPrime === '') { whetherPrime = 'yes'; }
   }
-  return isPrime;
+  const questionAndResult = {
+    question: num,
+    result: whetherPrime,
+  };
+  return questionAndResult; // возвращаем правильный результат для передачи на проверку
 };
 export default primeGen;

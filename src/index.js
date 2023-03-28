@@ -1,6 +1,4 @@
-/* eslint-disable linebreak-style */
 import readlineSync from 'readline-sync';
-import afterword from './commons/printFarewell.js';
 import ansInputAndCheck from './commons/inputAndCheck.js';
 import chooseGame from './chooseGame.js';
 
@@ -21,6 +19,10 @@ function playGame() {
     if (ansInputAndCheck(questionAndResult.result)) { correctAnssNeeded -= 1; } else { break; }
   } while (correctAnssNeeded > 0); // счётчик корректных ответов
 
-  afterword(playerName, correctAnssNeeded === 0);
+  if (correctAnssNeeded === 0) {
+    console.log(`Congratulations, ${playerName}!`);
+  } else {
+    console.log(`Let's try again, ${playerName}!`);
+  }
 }
 export default playGame;

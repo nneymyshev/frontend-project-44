@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import calcGenAndResult from './specials/createQuestCalc.js';
 import evenGen from './specials/createQuestEven.js';
 import progGen from './specials/createQuestProg.js';

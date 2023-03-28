@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import genRandomInteger from '../commons/genRandom.js';
 
 const evenGen = () => {
